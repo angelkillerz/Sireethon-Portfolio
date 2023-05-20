@@ -49,6 +49,7 @@ html,body {
   transition: all 0.4s ease;
 }
 .button-hire:hover {
+  background-color: #003B00;
   transform: scale(1.2);
 }
 
@@ -73,9 +74,14 @@ html,body {
   color: white;
 }
 .cv:hover {
-  background-color: #03A062;
+  background-color: #003B00;
 }
 
 .gh:hover ,.ln:hover,.cv:hover {
   transform: scale(1.2);
+}
+
+.motion-div {
+  position: absolute;
+  width: 100%;
 }

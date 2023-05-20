@@ -9,8 +9,8 @@ const MatrixRain = () => {
     let drops = [];
     
 
-    const matrix = "1109)(z0 0001 1^./100 1111 10Ty001 1kLi010";
-    const font_size = 10;
+    const matrix = "改めてこのメインビジュアル見るとワイリ";
+    const font_size = 12;
     const columns = Math.ceil(window.innerWidth / font_size);
     const rows = Math.ceil(window.innerHeight / font_size);
 
@@ -26,6 +26,7 @@ const MatrixRain = () => {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     //   "#f4427d"
     //#6e7598
+    //'#64d86b'
       ctx.fillStyle = '#64d86b';
       ctx.font = font_size + "px arial";
 
@@ -40,8 +41,8 @@ const MatrixRain = () => {
         drops[i]++;
       }
     };
-
-    const intervalId = setInterval(draw, 35);
+    //35
+    const intervalId = setInterval(draw, 45);
 
     return () => {
       clearInterval(intervalId);
