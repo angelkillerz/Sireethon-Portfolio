@@ -27,7 +27,7 @@ function Navbar() {
   return (
     <nav className='flex justify-between items-center gap-4 px-4 py-2  w-full flex-shrink-0 drop-shadow-md opacity-70'>
       <div className='flex-grow'>
-        <span className='text-white text-xl md:text-3xl font-bold'>Sireethon.dev</span>
+        <Link to={'/'}><span className='text-white text-xl md:text-3xl font-bold'>Sireethon.dev</span></Link>
       </div>
       <div className='flex gap-4 md:flex md:gap-4 relative'>
         <button

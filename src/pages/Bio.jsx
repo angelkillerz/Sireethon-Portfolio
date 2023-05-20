@@ -1,11 +1,23 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { color, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import TechStack from './TechStack';
 
 function Bio() {
-
+    const links = {
+        github: "https://github.com/angelkillerz",
+        linkedin: "https://www.linkedin.com/in/sireethon/",
+        resume: "https://drive.google.com/file/d/153SgtHx7X3jBgWnbESSlNMiWWIq2mGEM/view?usp=sharing"
+    }
     const roles = ["Software Engineer", "Data Engineer", "Backend Developer", "Frontend Developer"]
     const [role, setRole] = useState("");
+
+    const handleOnClick = (link) => {
+        window.open(link, "_blank")
+    }
+
+
+
     useEffect(() => {
         let index = 0
         const intervalId = setInterval(() => {
@@ -22,7 +34,14 @@ function Bio() {
       },[]);
 
   return (
-    <div>
+    <div className='h-full'>
+        <AnimatePresence>
+        <motion.div
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            transition={{duration: 0.5}}
+        >
         <div className='bio m-10 mt-64'>
             <div className='flex flex-col items-center gap-10 mt-10'>
                 <div>
@@ -46,7 +65,7 @@ function Bio() {
                     <button 
                     className='button-hire bg-slate-800 rounded-lg p-4 text-white'
                     style={
-                        {backgroundColor: '#03A062'}
+                        {backgroundColor: '#64d86b'}
                     }
                     
                     >Get In Touch</button>
@@ -54,14 +73,16 @@ function Bio() {
             </div>
             <div className='cv-profile mt-10'>
                 <div className=' flex flex-col justify-center md:flex md:flex-row gap-8'>
-                    <button className='gh border-solid border-2 p-4 px-20 rounded-lg text-white'>Github</button>
-                    <button className='ln border-solid border-2 p-4 px-20 rounded-lg text-white'>LinkedIn</button>
+                    <button className='gh border-solid border-2 p-4 px-20 rounded-lg text-white' onClick={() => handleOnClick(links.github)}>Github</button>
+                    <button className='ln border-solid border-2 p-4 px-20 rounded-lg text-white' onClick={() => handleOnClick(links.linkedin)}>LinkedIn</button>
                     
                 </div>
                 <div className='flex flex-col justify-center md:flex md:flex-row gap-8 mt-10'>
-                    <button className='cv border-solid border-2 p-4 px-20 md:px-40 rounded-lg text-white'>Resume</button>
+                    {/* if the function that you want to put in onclick has a parameter you need to wrapt it in arrow function first otherwise it will be called immediately */}
+                    <button className='cv border-solid border-2 p-4 px-20 md:px-40 rounded-lg text-white' onClick={() => handleOnClick(links.resume)}>Resume</button>
                 </div>
             </div>
+            <TechStack/>
 
             {/* <div className='flex m-10 md:flex flex-col items-center mt-10'>
                 <div className=''>
@@ -75,6 +96,10 @@ function Bio() {
                
             </div> */}
         </div>
+        </motion.div>
+       
+        </AnimatePresence>
+        
         
         
     </div>
