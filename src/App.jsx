@@ -5,6 +5,7 @@ import Bio from './pages/Bio';
 import Projects from './pages/Projects';
 import MatrixRain from './components/MatrixRain';
 import ProfilePage from './pages/ProfilePage';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function AppRoutes() {
           <Route path='/' element={<Bio />} />
           <Route path='/profile' element={<ProfilePage />} />
           <Route path='/projects' element={<Projects />} />
+          <Route path='/contact' element={<Contact/>}/>
         </Routes>
     </motion.div>
       
