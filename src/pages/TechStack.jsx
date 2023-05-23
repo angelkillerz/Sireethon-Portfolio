@@ -6,7 +6,7 @@ import {motion} from 'framer-motion'
 
 function TechBox({ tech, imgSrc }) {
   return (
-    <div className='flex flex-col items-center justify-center m-auto p-4 border border-gray-200 rounded w-40 h-40 hover:bg-gray-100 hover:opacity-40 transition-colors duration-200 text-black'>
+    <div className='flex flex-col items-center justify-center m-auto p-4 border border-gray-200 rounded w-40 h-40 hover:bg-gray-100 hover:opacity-100 transition-colors duration-200 text-black'>
       <img className='h-16 w-16 mx-auto' src={imgSrc} alt={tech} />
       {/* <h2 className='text-center mt-2 text-white hover:text-black'>{tech}</h2> */}
     </div>
